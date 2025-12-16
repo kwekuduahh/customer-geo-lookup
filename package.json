@@ -1,0 +1,33 @@
+{
+  "name": "SwiperNoSwiping",
+  "version": "1.0.0",
+  "description": "Web scraper for Scamalytics IP geolocation data",
+  "main": "src/api/lookup.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "build": "echo 'Build complete'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "web-scraper",
+    "ip-geolocation",
+    "scamalytics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  }
+}
+

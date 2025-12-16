@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Geolocation Scraper - Scamalytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 IP Geolocation Scraper</h1>
+            <p class="subtitle">Extract location data from Scamalytics IP lookup</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <form id="ipForm">
+                    <div class="input-group">
+                        <label for="ipInput">IP Address</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="ipInput" 
+                                placeholder="154.161.165.171"
+                                pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                required
+                            >
+                            <button type="submit" id="submitBtn">
+                                <span class="btn-text">Lookup</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <span class="spinner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <small class="hint">Enter a valid IPv4 address (e.g., 154.161.165.171)</small>
+                    </div>
+                </form>
+
+                <div class="quick-ips">
+                    <span class="quick-label">Quick test:</span>
+                    <button class="quick-btn" data-ip="154.161.165.171">154.161.165.171</button>
+                    <button class="quick-btn" data-ip="8.8.8.8">8.8.8.8</button>
+                    <button class="quick-btn" data-ip="1.1.1.1">1.1.1.1</button>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2>Location Data</h2>
+                    <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                        📋 Copy JSON
+                    </button>
+                </div>
+                <div class="results-card">
+                    <div class="result-item">
+                        <span class="result-label">IP Address:</span>
+                        <span class="result-value" id="resultIP">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Country:</span>
+                        <span class="result-value" id="resultCountry">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">State/Province:</span>
+                        <span class="result-value" id="resultState">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">District/County:</span>
+                        <span class="result-value" id="resultDistrict">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">City:</span>
+                        <span class="result-value" id="resultCity">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Timestamp:</span>
+                        <span class="result-value" id="resultTimestamp">-</span>
+                    </div>
+                </div>
+                <div class="json-preview">
+                    <details>
+                        <summary>View Raw JSON</summary>
+                        <pre id="jsonOutput"></pre>
+                    </details>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Scamalytics IP Lookup</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
