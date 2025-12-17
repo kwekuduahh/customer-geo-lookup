@@ -28,9 +28,6 @@ WebScraper/
 │   ├── index.html
 │   ├── styles.css
 │   └── app.js
-├── tests/
-│   └── scraper.test.js
-└── vercel.json
 ```
 
 ## Setup
@@ -71,21 +68,7 @@ GET /api/lookup?ip=154.161.165.171
 
 ## Deployment
 
-### Vercel
-```bash
-npm run deploy
-```
 
 ### Netlify
 Configure `netlify.toml` and deploy via Netlify dashboard or CLI.
-
-## Testing
-
-```bash
-npm test
-```
-
-## License
-
-MIT
 
